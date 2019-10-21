@@ -1,0 +1,67 @@
+fastlane_version "2.41.0"
+default_platform :ios
+app_name = "DailyNews"
+scheme_name = "DailyNews"
+workspace_name = "DailyNews.xcworkspace"
+xcodeproj_name = "DailyNews.xcodeproj"
+
+platform :ios do
+  before_all do
+    cocoapods
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta Build to Fabric"
+  lane :beta do
+  	cert(keychain_path: 'Keychains/dailynews.keychain', keychain_password: 'password')
+    unlock_keychain(path: 'Keychains/dailynews.keychain', password: 'password')
+	gym(scheme: "#{scheme_name}",
+      workspace: "#{workspace_name}",
+      include_bitcode: false,
+      export_method: 'ad-hoc',
+      output_directory: 'builds/' + Time.now.strftime('%F'),
+      output_name: "#{app_name}-beta")  
+    #pilot
+	
+    # upload to Beta by Crashlytics
+	change_log = changelog_from_git_commits(pretty: '%h - %s', include_merges: false)
+	crashlytics(
+		api_token: "37fc911f0136419b3934e449df9f4166ce4fdf45",
+		build_secret: "ddea470616321d7d481be9dbfe3a78d07fa71a8ce2dc1f7e19ffef042783c480",
+		emails: ['xpert.developer@gmail.com'],
+		#groups: [],
+		notes: change_log,
+		notifications: true
+	)
+	slack(slack_url: 'https://hooks.slack.com/services/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',
+		channel: 'autobuild',
+		message: "New build available on Crashlytics - see it at https://fabric.io/_/beta \nRelease notes:\n #{change_log}"
+	)
+	
+	#ensure_git_status_clean
+	increment_build_number(xcodeproj: "#{xcodeproj_name}")
+	#commit_version_bump(xcodeproj: "#{xcodeproj_name}")
+	#add_git_tag
+	#push_to_git_remote
+
+  end
+  
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end

@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (5.0.0-beta.6)
+  - AlamofireObjectMapper (6.1.0):
+    - Alamofire (= 5.0.0-beta.6)
+    - ObjectMapper (~> 3.4)
+  - BrightFutures (8.0.0)
+  - CNPPopupController (0.3.3)
+  - Crashlytics (3.13.4):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - ObjectMapper (3.5.1)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - BrightFutures
+  - CNPPopupController
+  - Crashlytics
+  - Fabric
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - BrightFutures
+    - CNPPopupController
+    - Crashlytics
+    - Fabric
+    - ObjectMapper
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
+  AlamofireObjectMapper: cd819bed60ad326e8920a6c524c19744e15bb237
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
+  CNPPopupController: 59b06290762f68beab5fb0bbfa87eb4dcbefb7de
+  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: c4af22942eaeb3d78e2c746db538cbcb1e25a628
+
+COCOAPODS: 1.6.1
