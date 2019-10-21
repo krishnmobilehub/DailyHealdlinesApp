@@ -1,7 +1,7 @@
 # DailyNewsDemoApp
 
 # Feature
-- Show daily new from API
+- Show daily news from API
 - Implement Pinterest view for show list of news
 - Show news detail on tap on list
 - Fastlane integration with Slack and Crashlytics
