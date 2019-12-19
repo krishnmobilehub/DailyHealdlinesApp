@@ -39,17 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DailyNews.xcscheme</key>
+		<key>Pods-DailyHeadlinesApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DailyNewsTests.xcscheme</key>
+		<key>Pods-DailyHeadlinesAppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DailyNewsUITests.xcscheme</key>
+		<key>Pods-DailyHeadlinesAppUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

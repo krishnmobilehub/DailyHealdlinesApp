@@ -1,0 +1,6 @@
+framework module Pods_DailyHeadlinesApp {
+  umbrella header "Pods-DailyHeadlinesApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

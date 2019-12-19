@@ -3,10 +3,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'DailyNews' do
+target 'DailyHeadlinesApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   
-  # Pods for DailyNews
+  # Pods for DailyHeadlinesApp
   pod 'AlamofireObjectMapper'
   pod 'Alamofire'
   pod 'SwiftyJSON'
@@ -16,12 +16,12 @@ target 'DailyNews' do
   pod 'Crashlytics'
 end
 
-  target 'DailyNewsTests' do
+  target 'DailyHeadlinesAppTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'DailyNewsUITests' do
+  target 'DailyHeadlinesAppUITests' do
     inherit! :search_paths
     # Pods for testing
   end
