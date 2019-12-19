@@ -1,4 +1,4 @@
-# DailyNewsDemoApp
+# DailyHealdlinesApp
 
 # Feature
 - Show daily news from API
